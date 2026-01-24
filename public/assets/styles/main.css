@@ -1,0 +1,81 @@
+/* --- System Variables --- */
+:root {
+    --bg-color: #0a0a0b;
+    --accent: #00f3ff;
+    --border: #1f2937;
+    --text-main: #ffffff;
+    --text-dim: #9ca3af;
+    --gap: 2rem;
+}
+
+/* --- Base Reset --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+.mono { font-family: 'Fira Code', monospace; }
+
+/* --- Layout Engine --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hud-grid-bg {
+    background-image: radial-gradient(var(--border) 1px, transparent 1px);
+    background-size: 40px 40px;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4rem;
+}
+
+.main-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Your 4-column vs 8-column split */
+    gap: var(--gap);
+}
+
+@media (max-width: 768px) {
+    .main-layout { grid-template-columns: 1fr; }
+    header { flex-direction: column; gap: 1rem; }
+}
+
+/* --- Components --- */
+.terminal-border {
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    position: relative;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    opacity: 0; /* For GSAP Boot-up */
+}
+
+.terminal-border::before {
+    content: "";
+    position: absolute;
+    top: -1px; left: 10px; width: 40px; height: 3px;
+    background: var(--accent);
+}
+
+/* --- Typography & Details --- */
+.label {
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.dim { color: var(--text-dim); font-size: 0.85rem; }

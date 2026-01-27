@@ -1,5 +1,13 @@
-"scripts": {
+{
+  "name": "kenddly-github-io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
     "build": "bunx @11ty/eleventy",
-    "start": "bunx @11ty/eleventy --serve",
-    "debug": "DEBUG=Eleventy* bunx @11ty/eleventy"
+    "start": "bunx @11ty/eleventy --serve"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
 }

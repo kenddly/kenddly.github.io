@@ -1,0 +1,67 @@
+.signal-rail {
+    position: relative;
+    flex: 0 0 40px;
+
+    min-height: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+
+    align-self: stretch;
+    min-height: 100%;
+}
+
+.signal-rail::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--accent-fade) 10%,
+    var(--accent-fade) 90%,
+    transparent
+    );
+    opacity: 0.6;
+}
+
+/* Moving pulse */
+.signal-dot {
+    position: absolute;
+    top: 0;
+    width: 8px;
+    height: 8px;
+    background: var(--accent-amber);
+    border-radius: 50%;
+    box-shadow: var(--glow-amber);
+    /* Use a more "mechanical" timing function than linear if you want retro feel */
+    animation: signal-travel 7s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes signal-travel {
+    0% { 
+        top: 0%;
+        opacity: 0; 
+    }
+    20% { 
+        opacity: 1; 
+    }
+    80% { 
+        opacity: 1; 
+    }
+    100% { 
+        top: 100%;
+        opacity: 0; 
+    }
+}
+
+@media (max-width: 1000px) {
+  .signal-rail {
+    display: none;
+    height: 0;
+  }
+}
+

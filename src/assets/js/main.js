@@ -1,5 +1,4 @@
 import "./mode-switch.js";
-import "./mouse-glow.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const tl = gsap.timeline({

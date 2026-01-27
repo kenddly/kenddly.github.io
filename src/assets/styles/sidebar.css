@@ -1,0 +1,59 @@
+.label {
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    color: var(--text-dim);
+}
+
+
+.identity-stack {
+    padding-top: 1rem;
+}
+
+.sticky-content {
+    position: sticky;
+    top: 3rem;
+}
+
+.philosophy-quote {
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    font-size: 1rem;
+    opacity: 0.7;
+    margin: 2rem 0;
+    line-height: 1.6;
+}
+
+.system-time {
+    font-size: 0.8rem;
+    color: var(--accent-amber);
+    text-shadow: var(--glow-amber);
+}
+
+.social-ports {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 2rem 0;
+    padding-left: 0.5rem;
+    border-left: 1px solid oklch(25% 0.02 70);
+}
+
+.port-link {
+    font-size: 0.7rem;
+    text-decoration: none;
+    color: var(--text-ink);
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    display: flex;
+    gap: 10px;
+}
+
+.port-link .dim {
+    color: oklch(40% 0.02 70); /* Muted port number */
+}
+
+.port-link:hover {
+    color: var(--accent-amber);
+    transform: translateX(5px);
+    text-shadow: 0 0 8px oklch(70% 0.12 75 / 0.5);
+}

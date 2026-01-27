@@ -1,0 +1,21 @@
+<div class="staggered-feed">
+    {% for post in collections['posts'] %}
+    <article class="project-card" data-index="LOG_{{ loop.index }}">
+        <div class="card-header">
+            <div class="card-hex mono">
+                0x0{{ loop.index }}
+            </div>
+        </div>
+
+        <h3 class="mono uppercase">{{ post.data.title }}</h3>
+        <p class="project-summary">{{ post.data.description or "Retrieved memory fragment." }}</p>
+
+        <div class="tag-row">
+            <span class="tag mono">{{ post.date | dateFilter }}</span>
+            <span class="tag mono">FRAGMENT</span>
+        </div>
+
+        <a href="{{ post.url }}" class="module-link mono">READ_LOG →</a>
+    </article>
+    {% endfor %}
+</div>

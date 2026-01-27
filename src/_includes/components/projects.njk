@@ -1,0 +1,31 @@
+<div class="staggered-feed">
+    {% for project in collections['projects'] %}
+    <article class="project-card" data-index="0x0{{ loop.index }}">
+        <div class="card-hex mono">
+            0x0{{ loop.index }}
+        </div>
+
+        <h3 class="mono uppercase">
+            {{ project.data.title }}
+        </h3>
+
+        <p class="project-summary">
+        {{ project.data.description }}
+        </p>
+
+        <div class="tag-row">
+            {% for tag in project.data.tags %}
+            {% if tag != "project" %}
+            <span class="tag mono">
+                {{ tag }}
+            </span>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        <a href="{{ project.url }}" class="module-link mono">
+            ENTER_SYSTEM →
+        </a>
+    </article>
+    {% endfor %}
+</div>

@@ -1,0 +1,184 @@
+:root {
+    /* Environment */
+    --bg-world: oklch(10% 0.02 260);
+    --bg-panel: oklch(14% 0.02 260);
+    --bg-glass: rgba(20, 22, 30, 0.6);
+
+    /* Phosphor / Signal */
+    --accent-amber: oklch(75% 0.17 80);
+    --accent-fade: oklch(65% 0.08 80);
+    --accent-dim: oklch(55% 0.05 80);
+
+    /* Ink + Structure */
+    --text-ink: oklch(92% 0.01 80);
+    --text-dim: oklch(75% 0.01 80);
+    --border-soft: oklch(28% 0.02 260);
+
+    /* Glow */
+    --glow-amber: 0 0 12px color-mix(in oklch, var(--accent-amber), transparent 70%);
+}
+
+/* The Container that encapsulates everything */
+.mode-shell {
+    display: inline-block; /* Keeps it tight around content */
+    border: 1px solid var(--border-soft);
+    padding: 0.5rem 1.5rem;
+    background: var(--bg-module);
+    backdrop-filter: blur(10px);
+    margin: 0 auto 4rem auto;
+    position: relative;
+}
+
+
+.mode-tabs {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.tab-system {
+    width: 100%;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+/* The horizontal separator that spans the content area */
+.tab-system::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: oklch(25% 0.02 260); /* Muted line */
+    z-index: 1;
+}
+
+.tab-group {
+    display: flex;
+    gap: 0.5rem; /* Small gap between physical keys */
+    position: relative;
+    z-index: 2; /* Sits above the separator line */
+}
+
+.tab {
+    background: transparent;
+    border: 1px solid oklch(25% 0.02 260);
+    border-bottom: none; /* Open at the bottom to merge with line */
+    padding: 0.8rem 2.5rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    top: 1px; /* Overlaps the separator line exactly */
+}
+
+/* THE ACTIVE STATE: The "Visual Bridge" */
+.tab.active {
+    border-color: var(--accent-amber); /* Use your amber var from signal.css */
+    background: var(--bg-world); /* Matches your static background */
+    opacity: 1;
+}
+
+/* This pseudo-element "cuts" the separator line so the tab merges with the content */
+.tab.active::after {
+    content: "";
+    position: absolute;
+    bottom: -1px; /* Sits exactly over the tab-system line */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--bg-world); /* Matches the background to hide the line */
+}
+
+.tab-label {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: var(--text-ink);
+    opacity: 0.5;
+}
+
+.tab.active .tab-label {
+    opacity: 1;
+    text-shadow: 0 0 10px var(--accent-amber);
+}
+
+.mode-track {
+  position: relative;
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--accent-dim),
+    transparent
+  );
+  opacity: 0.6;
+}
+
+.mode-dot {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background: var(--accent-amber);
+  border-radius: 50%;
+  box-shadow: var(--glow-amber);
+}
+
+.mode-label {
+  position: absolute;
+  top: -1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.55rem;
+  letter-spacing: 0.4em;
+  color: var(--text-dim);
+  opacity: 0.6;
+  white-space: nowrap;
+}
+
+.mode-bus {
+  position: relative;
+  margin-top: 1.8rem;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    color-mix(in oklch, var(--accent-amber), transparent 60%),
+    transparent
+  );
+  opacity: 0.8;
+}
+
+.bus-dot {
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--accent-amber);
+  border-radius: 50%;
+  box-shadow: var(--glow-amber);
+  animation: bus-pulse 3s ease-in-out infinite;
+}
+
+@keyframes bus-pulse {
+  0% { transform: translateX(0); opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0.4; }
+}
+
+.feed-spine {
+  margin: 1.5rem auto 0 auto;
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(
+    to bottom,
+    var(--accent-dim),
+    transparent
+  );
+  opacity: 0.5;
+}
+

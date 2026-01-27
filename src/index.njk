@@ -1,45 +1,30 @@
 ---
-layout: base.njk
+layout: layouts/base.njk
 title: Kenan | Portfolio
 ---
+
 <div class="hud-grid-bg">
-    <div class="container">
-        {% include 'header.njk' %}
-        <main class="main-layout">
-            <section class="content-area">
-                <span class="label dim">ACTIVE_MODULES (Projects)</span>
+    <div class="system-dashboard">
+        {% include "components/sidebar.njk"%}
 
-                <div class="project-grid">
-                    <div class="project-grid">
-                        {% for project in collections['projects'] %}
-                        <div class="terminal-border project-card">
+        <!-- SIGNAL RAIL -->
+        <div class="signal-rail">
+            <span class="signal-dot"></span>
+        </div>
 
-                            <div class="card-header">
-                                <span class="mono accent-text">0x0{{ loop.index }}</span>
-                                <div class="status-indicator">
-                                    <span class="status-dot"></span>
-                                    <span class="mono dim" style="font-size: 0.6rem;">STABLE</span>
-                                </div>
-                            </div>
+        <main class="main-content">
+            {% include "components/mode-tabs.njk" %}
 
-                            <h3 class="mono uppercase">{{ project.data.title }}</h3>
-                            <p class="dim">{{ project.data.description }}</p>
-
-                            <div class="tag-row">
-                                {% for tag in project.data.tags %}
-                                {# Filtering out the 'project' tag so it doesn't show up in the UI #}
-                                {% if tag != "project" %}
-                                <span class="tag mono">{{ tag }}</span>
-                                {% endif %}
-                                {% endfor %}
-                            </div>
-
-                            <a href="{{ project.url }}" class="module-link mono uppercase">Access_Module →</a>
-                        </div>
-                        {% endfor %}
-                    </div>
+            <div class="view-viewport">
+                <div class="entry project">
+                    {% include "components/projects.njk"%}
                 </div>
-            </section>
+
+                <div class="entry blog">
+                    {% include "components/blogs.njk"%}
+                </div>
+            </div>
         </main>
     </div>
 </div>
+

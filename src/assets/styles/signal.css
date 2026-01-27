@@ -1,9 +1,15 @@
 .signal-rail {
     position: relative;
+    flex: 0 0 40px;
+
+    min-height: 100%;
+    height: auto;
+
     display: flex;
     justify-content: center;
-    height: 100%; 
-    overflow: hidden;
+
+    align-self: stretch;
+    min-height: 100%;
 }
 
 .signal-rail::before {
@@ -50,5 +56,12 @@
         top: 100%;
         opacity: 0; 
     }
+}
+
+@media (max-width: 1000px) {
+  .signal-rail {
+    display: none;
+    height: 0;
+  }
 }
 

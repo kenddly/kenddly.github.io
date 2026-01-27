@@ -6,11 +6,9 @@ entries.forEach(
     entry => {
         console.log(entry);
         const show = entry.classList.contains("project");
-        entry.style.display = show ? "block" : "none";
+        entry.style.display = show ? "grid" : "none";
     }
 )
-
-const TRACK_WIDTH = 180;
 
 function onClickTab(tab) {
     tab.addEventListener("click", () => {
@@ -22,7 +20,7 @@ function onClickTab(tab) {
 
         // Move signal dot
         gsap.to(dot, {
-            x: mode === "blog" ? TRACK_WIDTH : 0,
+            left: mode === "blog" ? "100%" : "0%",
             duration: 0.6,
             ease: "expo.out"
         });

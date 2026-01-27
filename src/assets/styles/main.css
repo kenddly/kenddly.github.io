@@ -48,16 +48,21 @@
 }
 
 .system-dashboard {
-    display: grid;
-    grid-template-columns: 220px 40px 1fr 280px;
+    display: flex;
+    flex-direction: row;
     gap: 3rem;
-    max-width: 1700px;
     margin: 0 auto;
     padding: 3rem 2rem 4rem;
+
+    min-height: 100vh;
+    max-height: 100vh;
+    align-items: stretch;
 }
 
 .main-content {
+    flex: 1 1 auto;
     min-width: 0;
+    max-width: 100%;
 }
 
 .section-divider {
@@ -79,18 +84,10 @@
 }
 
 .staggered-feed {
-    display: flex;
-    flex-direction: column;
-    gap: 6rem;
-}
-
-/* Gentle hand-placed feel */
-.project-card:nth-child(3n) {
-    margin-left: 8%;
-}
-
-.project-card:nth-child(3n + 2) {
-    margin-left: 4%;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem 2rem;
 }
 
 /* ======================================================
@@ -99,7 +96,6 @@ PROJECT CARD SYSTEM
 
 .project-card {
     position: relative;
-    max-width: 68ch;
     padding: 3rem 2.5rem 2.5rem;
     background: linear-gradient(
     to bottom,
@@ -227,16 +223,16 @@ RESPONSIVE FALLBACK
 ====================================================== */
 
 @media (max-width: 1000px) {
-    .system-dashboard {
+    .staggered-feed {
         grid-template-columns: 1fr;
     }
 
-    .signal-rail,
-    .blogs-column {
-        display: none;
+    .system-dashboard {
+        flex-direction: column;
     }
 
     .identity-stack {
-        margin-bottom: 1rem;
+        width: 100%;
+        flex: none;
     }
 }

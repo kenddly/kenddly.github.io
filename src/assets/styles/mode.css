@@ -20,12 +20,13 @@
 
 /* The Container that encapsulates everything */
 .mode-shell {
-    display: inline-block; /* Keeps it tight around content */
-    border: 1px solid var(--border-soft);
+    align-items: center;
+    /* border: 1px solid var(--border-soft); */
+    width: 100%;
     padding: 0.5rem 1.5rem;
     background: var(--bg-module);
     backdrop-filter: blur(10px);
-    margin: 0 auto 4rem auto;
+    margin: 0 auto 0 auto;
     position: relative;
 }
 
@@ -104,81 +105,37 @@
 }
 
 .mode-track {
-  position: relative;
-  width: 120px;
-  height: 1px;
-  background: linear-gradient(
+    position: relative;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
     to right,
     transparent,
     var(--accent-dim),
     transparent
-  );
-  opacity: 0.6;
+    );
+    opacity: 0.6;
 }
 
 .mode-dot {
-  position: absolute;
-  top: -3px;
-  left: 0;
-  width: 6px;
-  height: 6px;
-  background: var(--accent-amber);
-  border-radius: 50%;
-  box-shadow: var(--glow-amber);
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    background: var(--accent-amber);
+    border-radius: 50%;
+    box-shadow: var(--glow-amber);
 }
 
 .mode-label {
-  position: absolute;
-  top: -1.2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 0.55rem;
-  letter-spacing: 0.4em;
-  color: var(--text-dim);
-  opacity: 0.6;
-  white-space: nowrap;
+    position: absolute;
+    top: -1.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.55rem;
+    letter-spacing: 0.4em;
+    color: var(--text-dim);
+    opacity: 0.6;
+    white-space: nowrap;
 }
-
-.mode-bus {
-  position: relative;
-  margin-top: 1.8rem;
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    color-mix(in oklch, var(--accent-amber), transparent 60%),
-    transparent
-  );
-  opacity: 0.8;
-}
-
-.bus-dot {
-  position: absolute;
-  top: -4px;
-  left: 0;
-  width: 8px;
-  height: 8px;
-  background: var(--accent-amber);
-  border-radius: 50%;
-  box-shadow: var(--glow-amber);
-  animation: bus-pulse 3s ease-in-out infinite;
-}
-
-@keyframes bus-pulse {
-  0% { transform: translateX(0); opacity: 0.4; }
-  50% { opacity: 1; }
-  100% { transform: translateX(100%); opacity: 0.4; }
-}
-
-.feed-spine {
-  margin: 1.5rem auto 0 auto;
-  width: 1px;
-  height: 48px;
-  background: linear-gradient(
-    to bottom,
-    var(--accent-dim),
-    transparent
-  );
-  opacity: 0.5;
-}
-

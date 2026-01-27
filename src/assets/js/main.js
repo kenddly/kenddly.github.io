@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.set([
         ".identity-stack",
         ".signal-rail",
-        ".memory-column",
         ".project-card"
     ], { opacity: 0, y: 20 });
 
@@ -20,28 +19,18 @@ document.addEventListener("DOMContentLoaded", () => {
         { opacity: 1, duration: 0.2 }
     )
 
-    // 2. IDENTITY STACK — operator presence
         .to(".identity-stack", {
             opacity: 1,
             y: 0,
             duration: 0.5
         })
 
-    // 3. SIGNAL RAIL — data line comes online
         .to(".signal-rail", {
             opacity: 1,
             y: 0,
             duration: 0.4
         }, "-=0.2")
 
-    // 4. MEMORY COLUMN — archive loads
-        .to(".memory-column", {
-            opacity: 1,
-            y: 0,
-            duration: 0.4
-        }, "-=0.3")
-
-    // 5. PROJECT STREAM — cards register into system
         .to(".project-card", {
             opacity: 1,
             y: 0,

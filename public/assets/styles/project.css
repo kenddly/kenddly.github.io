@@ -1,0 +1,208 @@
+/* Project Detail Layout */
+
+.project-detail-view {
+    padding-top: 2rem;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.project-header {
+    margin-bottom: 3rem;
+}
+
+.project-meta-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.project-title {
+    color: var(--accent-amber);
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    margin: 0;
+    text-shadow: var(--glow-amber);
+}
+
+.status-badge {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--border-soft);
+    color: var(--text-dim);
+    background: color-mix(in oklch, var(--bg-panel), transparent 50%);
+    text-transform: uppercase;
+}
+
+.status--archived {
+    border-color: oklch(40% 0.02 260);
+    color: oklch(60% 0.02 260);
+}
+
+.project-meta-info {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    flex-wrap: wrap;
+}
+
+.tech-stack-inline {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.tech-tag {
+    font-size: 0.8rem;
+    color: var(--accent-dim);
+}
+
+.tech-tag::before {
+    content: "•";
+    margin-right: 0.4rem;
+    opacity: 0.5;
+}
+
+/* Panels */
+.panel {
+    background: linear-gradient(to bottom,
+            color-mix(in oklch, var(--bg-panel), transparent 8%),
+            var(--bg-panel));
+    border: 1px solid var(--border-soft);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+    padding: 2rem;
+}
+
+.project-hero {
+    margin: 3rem 0;
+}
+
+.hero-frame {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: 1px solid var(--border-soft);
+    filter: sepia(0.2) hue-rotate(-10deg) saturate(1.2); /* Slight retro treatment */
+}
+
+/* Specs */
+.specs-section {
+    margin: 4rem 0;
+}
+
+.section-label {
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    color: var(--accent-dim);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.spec-card {
+    padding: 1.5rem;
+}
+
+.spec-title {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+    text-transform: uppercase;
+}
+
+.spec-value {
+    color: var(--text-ink);
+    font-size: 1.1rem;
+}
+
+/* Body Content */
+.project-body {
+    max-width: 75ch;
+    margin: 4rem 0;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-dim);
+}
+
+.project-body h2, .project-body h3 {
+    color: var(--text-ink);
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+}
+
+.project-body h2 {
+    font-size: 1.5rem;
+    border-bottom: 1px solid var(--border-soft);
+    padding-bottom: 0.5rem;
+}
+
+.project-body h3 {
+    font-size: 1.2rem;
+    color: var(--accent-dim);
+}
+
+.project-body ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-body li {
+    margin-bottom: 0.5rem;
+}
+
+.project-body strong {
+    color: var(--accent-amber);
+    font-weight: normal;
+}
+
+/* Buttons */
+.btn-primary {
+    display: inline-block;
+    background: transparent;
+    color: var(--accent-amber);
+    border: 1px solid var(--accent-amber);
+    padding: 0.8rem 1.5rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: color-mix(in oklch, var(--accent-amber), transparent 80%);
+    box-shadow: var(--glow-amber);
+}
+
+.action-bar {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-soft);
+}

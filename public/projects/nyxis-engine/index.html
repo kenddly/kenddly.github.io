@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Nyxis Engine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/styles/main.css">
+    <link rel="stylesheet" href="/assets/styles/sidebar.css">
+    <link rel="stylesheet" href="/assets/styles/signal.css">
+    <link rel="stylesheet" href="/assets/styles/mode.css">
+    <link rel="stylesheet" href="/assets/styles/project.css">
+</head>
+<body>
+    
+<div class="hud-grid-bg">
+    <div class="system-dashboard">
+        <aside class="identity-stack entry-animate">
+    <div class="sticky-content">
+        <span class="label mono">KENAN BANDALIYEV</span>
+        <p class="philosophy-quote">
+            "The soul is the hardware of thought."
+        </p>
+        
+        <div class="social-ports">
+            <a href="https://github.com/kenddly" class="port-link mono" target="_blank">
+                <span class="dim"></span> GITHUB
+            </a>
+            <a href="https://www.linkedin.com/in/kenan-bandaliyev-compsci/" class="port-link mono" target="_blank">
+                <span class="dim"></span> LINKEDIN
+            </a>
+            <a href="mailto:kenan.bandaliyev@gmail.com" class="port-link mono">
+                <span class="dim"></span> EMAIL
+            </a>
+        </div>
+
+        <div class="system-time mono" id="kernel-clock">
+            00:00:00:00
+        </div>
+    </div>
+</aside>
+
+
+        <div class="signal-rail">
+            <span class="signal-dot"></span>
+        </div>
+
+        <main class="main-content project-detail-view">
+            
+            <!-- Uses your existing text utilities -->
+            <header class="project-header">
+                <div class="nav-bar" style="margin-bottom: 2rem;">
+                    <a href="/" class="module-link mono">
+                        ← BACK_TO_INDEX
+                    </a>
+                </div>
+                <div class="project-meta-header">
+
+                    <h1 class="project-title " data-text="Nyxis Engine">
+                        Nyxis Engine
+                    </h1>
+                    
+                    
+                    <span class="status-badge status--archived">archived</span>
+                    
+                </div>
+
+                <div class="project-meta-info mono-text">
+                    <span class="meta-id accent-color">0x04</span>
+                    
+                    
+                    
+                    <div class="tech-stack-inline">
+                        
+                        <span class="tech-tag">Vulkan</span>
+                        
+                        <span class="tech-tag">C++20</span>
+                        
+                        <span class="tech-tag">ImGui</span>
+                        
+                        <span class="tech-tag">ECS</span>
+                        
+                    </div>
+                    
+                </div>
+            </header>
+
+            
+            <section class="project-hero crt-container">
+                <div class="hero-frame panel">
+                    <img src="/assets/images/nyxis-hero.png" alt="Nyxis Engine" class="hero-image">
+                    
+                </div>
+            </section>
+            
+
+            
+
+            <article class="project-body prose-content">
+                <h2>The Problem Space</h2>
+<p>Building a Vulkan-based game engine from scratch means wrestling with the API directly. No abstractions, no helpers—just raw memory management, synchronization, and pipeline barriers.</p>
+<h3>The Pipeline Challenge</h3>
+<p>The transition from transfer layouts to shader layouts required careful barrier management. This is where most tutorials stop, but I needed hot-reloading without restarting the engine.</p>
+<h3>Architecture Decisions</h3>
+<p>Implemented a sparse-set ECS rather than archetype-based (like EnTT) to maintain readability while learning. The trade-off was cache locality vs. code clarity—chose clarity for a solo learning project.</p>
+<h2>Key Features</h2>
+<ul>
+<li><strong>Hot-reloading</strong>: Shader and pipeline recompilation on file change</li>
+<li><strong>Cross-platform</strong>: Windows/Linux/macOS via CMake and MoltenVK</li>
+<li><strong>Editor</strong>: Full ImGui-based editor with docking and scene hierarchy</li>
+</ul>
+<h2>Outcome</h2>
+<p>Nyxis achieved its primary goal: teaching me graphics programming at the API level. The engine runs, edits scenes, hot-reloads assets, and exports builds. Archived as the learning curve shifts from &quot;understanding Vulkan&quot; to &quot;writing a production renderer&quot;—a different project entirely.</p>
+
+            </article>
+
+            
+
+            <footer class="project-footer">
+                <div class="action-bar">
+                    
+                    <a href="https://github.com/kenddly/Nyxis-Engine" class="btn-primary" target="_blank">View Repository →</a>
+                    
+                </div>
+            </footer>
+
+        </main>
+    </div>
+</div>
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script type="module" src="/assets/js/main.js"></script>
+</body>
+</html>

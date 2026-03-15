@@ -5,26 +5,27 @@
             0x0{{ loop.index }}
         </div>
 
-        <h3 class="mono uppercase">
-            {{ project.data.title }}
-        </h3>
+        <header class="card-header">
+            <h3 class="mono uppercase card-title">
+                {{ project.data.title }}
+            </h3>
+            <div class="tag-row">
+                {% for tag in project.data.tags %}
+                {% if tag != "project" %}
+                <span class="tag mono">
+                    {{ tag }}
+                </span>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </header>
 
         <p class="project-summary">
         {{ project.data.description }}
         </p>
 
-        <div class="tag-row">
-            {% for tag in project.data.tags %}
-            {% if tag != "project" %}
-            <span class="tag mono">
-                {{ tag }}
-            </span>
-            {% endif %}
-            {% endfor %}
-        </div>
-
         <a href="{{ project.url }}" class="module-link mono">
-            ENTER_SYSTEM →
+            ENTER →
         </a>
     </article>
     {% endfor %}

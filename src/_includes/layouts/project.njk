@@ -1,0 +1,99 @@
+---
+layout: layouts/base.njk
+---
+
+<div class="hud-grid-bg">
+    <div class="system-dashboard">
+        {% include "components/sidebar.njk"%}
+
+        <div class="signal-rail">
+            <span class="signal-dot"></span>
+        </div>
+
+        <main class="main-content project-detail-view">
+            
+            <!-- Uses your existing text utilities -->
+            <header class="project-header">
+                <div class="nav-bar" style="margin-bottom: 2rem;">
+                    <a href="/" class="module-link mono">
+                        ← BACK_TO_INDEX
+                    </a>
+                </div>
+                <div class="project-meta-header">
+
+                    <h1 class="project-title {% if glitchEffect %}glitch{% endif %}" data-text="{{ title }}">
+                        {{ title }}
+                    </h1>
+                    
+                    {% if status %}
+                    <span class="status-badge status--{{ status }}">{{ status }}</span>
+                    {% endif %}
+                </div>
+
+                <div class="project-meta-info mono-text">
+                    {% if projectId %}<span class="meta-id accent-color">{{ projectId }}</span>{% endif %}
+                    {% if date %}<span>{{ date | date('yyyy') }}</span>{% endif %}
+                    
+                    {% if stack %}
+                    <div class="tech-stack-inline">
+                        {% for tech in stack %}
+                        <span class="tech-tag">{{ tech }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </header>
+
+            {% if heroImage %}
+            <section class="project-hero crt-container">
+                <div class="hero-frame panel">
+                    <img src="{{ heroImage }}" alt="{{ title }}" class="hero-image">
+                    {% if videoDemo %}
+                    <button class="btn-primary">▶ Watch Demo</button>
+                    {% endif %}
+                </div>
+            </section>
+            {% endif %}
+
+            {% if rendering or architecture %}
+            <section class="specs-section">
+                <div class="section-label mono-text accent-color">System Specs</div>
+                <div class="specs-grid">
+                    {% for spec in [rendering, architecture] if spec %}
+                    <div class="spec-card panel">
+                        <h3 class="spec-title mono-text">{{ spec.title }}</h3>
+                        <div class="spec-value">{{ spec.value }}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+
+            <article class="project-body prose-content">
+                {{ content | safe }}
+            </article>
+
+            {% if gallery %}
+            <section class="gallery-section">
+                <div class="gallery-grid">
+                    {% for img in gallery %}
+                    <figure class="gallery-item panel">
+                        <img src="{{ img.src }}" alt="{{ img.caption }}" loading="lazy">
+                        <figcaption class="mono-text">{{ img.caption }}</figcaption>
+                    </figure>
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+
+            <footer class="project-footer">
+                <div class="action-bar">
+                    {% if github %}
+                    <a href="{{ github }}" class="btn-primary" target="_blank">View Repository →</a>
+                    {% endif %}
+                </div>
+            </footer>
+
+        </main>
+    </div>
+</div>

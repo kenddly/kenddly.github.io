@@ -2,85 +2,162 @@
 <html lang="en">
 <head>
     <title>Kenan | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/styles/main.css">
+    <link rel="stylesheet" href="/assets/styles/sidebar.css">
+    <link rel="stylesheet" href="/assets/styles/signal.css">
+    <link rel="stylesheet" href="/assets/styles/mode.css">
+    <link rel="stylesheet" href="/assets/styles/project.css">
 </head>
 <body>
-    <div class="hud-grid-bg">
-    <div class="container">
-        <header>
-    <div class="terminal-border entry-animate">
-        <h1 class="mono uppercase">User: Kenan</h1>
-        <p class="mono dim">LOC: LONDON_UK // MSc_AI_STUDENT</p>
+    
+<div class="hud-grid-bg">
+    <div class="system-dashboard">
+        <aside class="identity-stack entry-animate">
+    <div class="sticky-content">
+        <span class="label mono">KENAN BANDALIYEV</span>
+        <p class="philosophy-quote">
+            "The soul is the hardware of thought."
+        </p>
+        
+        <div class="social-ports">
+            <a href="https://github.com/kenddly" class="port-link mono" target="_blank">
+                <span class="dim"></span> GITHUB
+            </a>
+            <a href="https://www.linkedin.com/in/kenan-bandaliyev-compsci/" class="port-link mono" target="_blank">
+                <span class="dim"></span> LINKEDIN
+            </a>
+            <a href="mailto:kenan.bandaliyev@gmail.com" class="port-link mono">
+                <span class="dim"></span> EMAIL
+            </a>
+        </div>
+
+        <div class="system-time mono" id="kernel-clock">
+            00:00:00:00
+        </div>
+    </div>
+</aside>
+
+
+        <!-- SIGNAL RAIL -->
+        <div class="signal-rail">
+            <span class="signal-dot"></span>
+        </div>
+
+        <main class="main-content">
+            <div class="mode-shell">
+    <div class="mode-tabs">
+        <button class="tab active" data-mode="project">
+            <span class="tab-label mono">PROJECTS</span>
+        </button>
+
+        <div class="mode-track">
+            <span class="mode-dot"></span>
+            <span class="mode-label mono" id="modeLabel">
+                STREAMING: PROJECTS
+            </span>
+        </div>
+
+        <button class="tab" data-mode="blog">
+            <span class="tab-label mono">BLOG</span>
+        </button>
     </div>
 
-    <nav class="mono dim entry-animate">
-        <span class="accent-text">[01]</span> PROJECTS &nbsp;
-        <span class="accent-text">[02]</span> BLOG
-    </nav>
-</header>
 
-        <main class="main-layout">
-            <section class="content-area">
-                <span class="label dim">ACTIVE_MODULES (Projects)</span>
+    <div class="mode-bus">
+        <span class="bus-dot"></span>
+    </div>
+    <div class="feed-spine"></div>
+</div>
 
-                <div class="project-grid">
-                    <div class="project-grid">
-                        
-                        <div class="terminal-border project-card">
 
-                            <div class="card-header">
-                                <span class="mono accent-text">0x01</span>
-                                <div class="status-indicator">
-                                    <span class="status-dot"></span>
-                                    <span class="mono dim" style="font-size: 0.6rem;">STABLE</span>
-                                </div>
-                            </div>
+            <div class="view-viewport">
+                <div class="entry project">
+                    <div class="staggered-feed">
+    
+    <article class="project-card" data-index="0x01">
+        <div class="card-hex mono">
+            0x01
+        </div>
 
-                            <h3 class="mono uppercase">Cognitive Graph-Net</h3>
-                            <p class="dim">MSc Research into learning decay using graph-based neural architectures.</p>
+        <header class="card-header">
+            <h3 class="mono uppercase card-title">
+                Mesh Segmentation and Classification Pipeline
+            </h3>
+            <div class="tag-row">
+                
+            </div>
+        </header>
 
-                            <div class="tag-row">
-                                
-                                
-                                
-                                
-                            </div>
+        <p class="project-summary">
+        My Bachelor&#39;s Thesis Project. Implemented a mesh segmentatino and classification algorithm for the treatment of scoliosis.
+        </p>
 
-                            <a href="/projects/cognitive-net/" class="module-link mono uppercase">Access_Module →</a>
-                        </div>
-                        
-                        <div class="terminal-border project-card">
+        <a href="/projects/mesh-seg-class/" class="module-link mono">
+            ENTER →
+        </a>
+    </article>
+    
+    <article class="project-card" data-index="0x02">
+        <div class="card-hex mono">
+            0x02
+        </div>
 
-                            <div class="card-header">
-                                <span class="mono accent-text">0x02</span>
-                                <div class="status-indicator">
-                                    <span class="status-dot"></span>
-                                    <span class="mono dim" style="font-size: 0.6rem;">STABLE</span>
-                                </div>
-                            </div>
+        <header class="card-header">
+            <h3 class="mono uppercase card-title">
+                Nyxis Engine
+            </h3>
+            <div class="tag-row">
+                
+            </div>
+        </header>
 
-                            <h3 class="mono uppercase">Vulkan Engine Core</h3>
-                            <p class="dim">High-performance C++ renderer with real-time FFmpeg stream processing.</p>
+        <p class="project-summary">
+        A Vulkan-based game engine from scratch.
+        </p>
 
-                            <div class="tag-row">
-                                
-                                
-                                
-                                
-                            </div>
+        <a href="/projects/nyxis-engine/" class="module-link mono">
+            ENTER →
+        </a>
+    </article>
+    
+</div>
 
-                            <a href="/projects/vulkan-engine/" class="module-link mono uppercase">Access_Module →</a>
-                        </div>
-                        
-                    </div>
                 </div>
-            </section>
+
+                <div class="entry blog">
+                    <div class="staggered-feed">
+    
+    <article class="project-card" data-index="LOG_1">
+        <div class="card-hex mono">
+            0x01
+        </div>
+        
+        <header class="card-header">
+            <h3 class="mono uppercase card-title"></h3>
+            <div class="tag-row">
+                <span class="tag mono">March 15, 2026</span>
+                <span class="tag mono">FRAGMENT</span>
+            </div>
+        </header>
+
+        <p class="project-summary">A personal blog sharing thoughts and experiences.</p>
+
+        <a href="/blog/blogs_1/" class="module-link mono">READ_LOG →</a>
+    </article>
+    
+</div>
+
+                </div>
+            </div>
         </main>
     </div>
 </div>
+
  
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="/assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script type="module" src="/assets/js/main.js"></script>
 </body>
 </html>

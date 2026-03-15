@@ -11,7 +11,7 @@
 
     /* Ink + Structure */
     --text-ink: oklch(92% 0.01 80);
-    --text-dim: oklch(75% 0.01 80);
+    --text-dim: oklch(85% 0.01 80);
     --border-soft: oklch(28% 0.02 260);
 
     /* Glow */
@@ -19,19 +19,20 @@
 }
 
 *,
-    *::before,
-    *::after {
-        box-sizing: border-box;
-    }
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
-    html, body {
-        margin: 0;
-        min-height: 100%;
-        background-color: var(--bg-world);
-        color: var(--text-ink);
-        font-family: "JetBrains Mono", monospace;
-        overflow-x: hidden;
-    }
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+    background-color: var(--bg-world);
+    color: var(--text-ink);
+    font-family: "JetBrains Mono", monospace;
+    overflow-x: hidden;
+}
 
 
 .mono {
@@ -55,7 +56,6 @@
     padding: 3rem 2rem 4rem;
 
     min-height: 100vh;
-    max-height: 100vh;
     align-items: stretch;
 }
 
@@ -75,11 +75,9 @@
 .hr-line {
     flex-grow: 1;
     height: 1px;
-    background: linear-gradient(
-    to right,
-    var(--accent-amber),
-    transparent
-    );
+    background: linear-gradient(to right,
+            var(--accent-amber),
+            transparent);
     opacity: 0.5;
 }
 
@@ -97,23 +95,29 @@ PROJECT CARD SYSTEM
 .project-card {
     position: relative;
     padding: 3rem 2.5rem 2.5rem;
-    background: linear-gradient(
-    to bottom,
-    color-mix(in oklch, var(--bg-panel), transparent 5%),
-    var(--bg-panel)
-    );
+    background: linear-gradient(to bottom,
+            color-mix(in oklch, var(--bg-panel), transparent 5%),
+            var(--bg-panel));
     border: 1px solid var(--border-soft);
     box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+        inset 0 0 0 1px rgba(255, 255, 255, 0.02);
     transition: border-color 0.4s ease, box-shadow 0.4s ease;
     animation: breathe 7s ease-in-out infinite;
 }
 
 /* Soft pulse */
 @keyframes breathe {
-    0%   { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02); }
-    50%  { box-shadow: var(--glow-amber); }
-    100% { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02); }
+    0% {
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+    }
+
+    50% {
+        box-shadow: var(--glow-amber);
+    }
+
+    100% {
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+    }
 }
 
 /* Index marker */
@@ -136,12 +140,10 @@ PROJECT CARD SYSTEM
     left: 1.5rem;
     right: 1.5rem;
     height: 1px;
-    background: linear-gradient(
-    to right,
-    transparent,
-    var(--border-soft),
-    transparent
-    );
+    background: linear-gradient(to right,
+            transparent,
+            var(--border-soft),
+            transparent);
     opacity: 0.5;
 }
 
@@ -156,7 +158,12 @@ PROJECT CARD SYSTEM
     color: var(--accent-amber);
     font-weight: 400;
     letter-spacing: 0.2em;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Card Header Container */
+.card-header {
+    margin-bottom: 1.5rem;
 }
 
 /* Summary */
@@ -164,6 +171,7 @@ PROJECT CARD SYSTEM
     font-size: 1rem;
     line-height: 1.8;
     color: var(--text-dim);
+    margin-bottom: 2rem;
 }
 
 /* ======================================================
@@ -174,7 +182,6 @@ TAG SYSTEM
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
-    margin: 1.5rem 0 2rem;
 }
 
 .tag {
@@ -214,8 +221,16 @@ ANIMATIONS
 ====================================================== */
 
 @keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
 }
 
 /* ======================================================

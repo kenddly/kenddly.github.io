@@ -46,14 +46,17 @@ document.addEventListener("DOMContentLoaded", () => {
             card.addEventListener("mouseenter", () => {
 
                 gsap.to(rail, {
-
                     filter: "drop-shadow(0 0 8px rgba(255, 190, 80, 0.8))",
-
                     duration: 0.3
-
                 });
 
-                dot.style.animationPlayState = "paused";
+                // Smooth stop
+                const animations = dot.getAnimations();
+                if (animations.length > 0) {
+                    gsap.to(animations[0], { playbackRate: 0, duration: 0.8, ease: "power2.out" });
+                } else {
+                    dot.style.animationPlayState = "paused";
+                }
 
             });
 
@@ -61,14 +64,17 @@ document.addEventListener("DOMContentLoaded", () => {
             card.addEventListener("mouseleave", () => {
 
                 gsap.to(rail, {
-
                     filter: "none",
-
                     duration: 0.5
-
                 });
 
-                dot.style.animationPlayState = "running";
+                // Smooth start
+                const animations = dot.getAnimations();
+                if (animations.length > 0) {
+                    gsap.to(animations[0], { playbackRate: 1, duration: 0.4, ease: "power2.in" });
+                } else {
+                    dot.style.animationPlayState = "running";
+                }
 
             });
 
